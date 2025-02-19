@@ -1,0 +1,28 @@
+---
+import Layout from "nebula-atoms/Layout";
+import Navbar from "../components/Navbar.astro";
+import { SINCE, SITE_TITLE } from "../consts";
+import FooterSection from "../components/FooterSection.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Layout
+  pageTitle={title}
+  siteTitle={SITE_TITLE}
+  since={SINCE}
+  footerIcon={{
+    alt: "Une illustration en attente",
+    src: "/favicon.svg",
+  }}
+>
+  <Navbar slot="navbar" />
+  <div id="container" class="py-5">
+    <slot />
+  </div>
+  <FooterSection slot="footer" />
+</Layout>
