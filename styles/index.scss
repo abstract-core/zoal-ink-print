@@ -1,26 +1,30 @@
 @use "../node_modules/nebula-atoms/styles/core";
 
+@use "./components/navbar";
+@use "./components/footer";
+
 :root {
-  --bg: #f7facc;
-  --primary: #f4f41c;
-  --accent: #ff70ba;
-  --dark: #3a3a3a;
+  --bg: #b2a454;
+  --leaves: #7c916fff;
+  --accent: #de684c;
+  --light: #f4e5d6;
 }
 
 @font-face {
-  font-family: "pangaia";
-  src: url("/fonts/PPPangaia-Bold.otf");
+  font-family: "pouler";
+  src: url("/fonts/Pouler.otf");
 }
 
 @font-face {
-  font-family: "open";
-  src: url("/fonts/OpenSans-Regular.ttf");
+  font-family: "baskervville";
+  src: url("/fonts/Baskervville-Regular.otf");
 }
 
 body {
-  font-family: "open";
+  font-family: "baskervville";
   background-color: var(--bg);
-  color: var(--dark);
+  color: var(--light);
+  font-size: 1.2rem;
 }
 
 h1,
@@ -29,22 +33,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "pangaia";
+  font-family: "pouler";
 }
 
 h1 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.375rem + 4vw);
 }
 h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1.325rem + 2.2vw);
+  a {
+    padding: 1.2rem 2rem 0.8rem;
+  }
 }
 h3 {
-  font-size: calc(1.225rem + 0.6vw);
+  font-size: calc(1.225rem + 1.4vw);
+}
+
+h2 a,
+#navbar-menu a,
+footer > :last-child a {
+  background-color: var(--accent);
+  color: var(--light);
+  font-family: "pouler";
+  text-decoration: none;
 }
 
 #navbar {
-  padding: 4px 16px;
-  width: 100%;
   > img {
     min-width: 800px;
     z-index: -1;
@@ -55,8 +69,8 @@ h3 {
   }
   > a {
     font-size: 2rem;
-    color: var(--accent);
-    font-family: "pangaia";
+    color: var(--light);
+    font-family: "pouler";
     margin-left: 4.5vw;
     margin-top: 4.5vw;
     text-decoration: none;
@@ -68,17 +82,16 @@ h3 {
       line-height: calc(1rem + 4vw);
     }
     > :last-child {
-      color: var(--dark);
+      color: var(--light);
       font-size: calc(0.8rem + 1vw);
     }
   }
 }
 
 p > a,
-footer a,
 .articles > li > a > :last-child {
   color: var(--accent);
-  font-family: "pangaia";
+  font-family: "pouler";
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
@@ -95,9 +108,12 @@ h2 {
 h3 {
   margin-top: 3rem;
 }
+#container {
+  padding-top: 20vh;
+}
 
 footer {
-  background: var(--primary);
+  background: var(--leaves);
   margin-top: 5rem;
   > :first-child {
     width: 262px;
@@ -108,12 +124,17 @@ footer {
         margin-bottom: 8px;
       }
       a {
+        color: var(--light);
         text-decoration: none;
       }
     }
   }
   > :last-child {
     width: 368px;
+    a {
+      padding: 0.6rem 0.6rem 0.4rem;
+      margin: auto 0.6rem;
+    }
   }
 }
 
@@ -121,26 +142,26 @@ footer {
   width: 360px;
 }
 #footer-site-title {
-  font-family: "pangaia";
+  font-family: "pouler";
   font-size: 4.5rem;
   margin: 1.5rem 0;
 }
 #footer-since {
-  font-family: "pangaia";
+  font-family: "pouler";
   font-size: 1.2rem;
 }
 
 blockquote {
   margin-top: 4rem;
-  background-color: var(--primary);
+  background-color: var(--leaves);
   border-radius: 8px;
   margin: 0;
   padding: 1rem 2rem;
 }
 
 @mixin button {
-  background-color: var(--primary);
-  color: var(--dark);
+  background-color: var(--light);
+  color: var(--leaves);
   padding: 8px 16px;
   text-decoration: none;
   border-radius: 24px;
@@ -170,10 +191,10 @@ ul > li {
       text-decoration: none;
       display: flex;
       > :first-child > span {
-        background-color: var(--primary);
+        background-color: var(--leaves);
         padding: 4px 8px;
         border-radius: 16px;
-        color: var(--dark);
+        color: var(--light);
         margin-right: 8px;
       }
       > :last-child {
@@ -188,4 +209,10 @@ ul > li {
     flex-direction: column;
     gap: 8px;
   }
+}
+
+/** fix sa mère */
+.btn-p {
+  display: inline-block;
+  margin-top: 0.2rem;
 }

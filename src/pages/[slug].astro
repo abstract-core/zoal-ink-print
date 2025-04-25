@@ -8,10 +8,10 @@ export async function getStaticPaths() {
   const pages = await getCollection("pages");
   return Promise.all(
     pages
-      .filter(({ data }) => data.Url?.slice(1))
+      .filter(({ data }) => data.Url?.slice(1) || data.Slug)
       .map(async (page) => ({
         params: {
-          slug: page.data.Url!.slice(1),
+          slug: page.data.Url?.slice(1) || page.data.Slug,
         },
         props: {
           page: {

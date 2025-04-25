@@ -1,0 +1,35 @@
+footer {
+  background: var(--primary);
+  margin-top: 5rem;
+  > :first-child {
+    width: 262px;
+    ul {
+      list-style: none;
+      > li {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  > :last-child {
+    width: 368px;
+  }
+}
+
+#footer-icon {
+  width: 360px;
+}
+
+#footer-site-title {
+  font-family: "pangaia";
+  font-size: 4.5rem;
+  margin: 1.5rem 0;
+}
+
+#footer-since {
+  font-family: "pangaia";
+  font-size: 1.2rem;
+}

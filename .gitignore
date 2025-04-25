@@ -2,7 +2,11 @@ cache/
 public/**/*.*
 !public/fonts/*.*
 !public/banniere.svg
+!public/favicon.svg
+!public/menu-open.svg
+!public/menu-close.svg
 src/data
+genesis.sh
 
 # build output
 dist/

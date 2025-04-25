@@ -1,7 +1,7 @@
 {
-  "name": "zoal-ink-print",
+  "name": "zoal-encre",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "start": "astro dev",
     "dev": "astro dev",
@@ -9,12 +9,18 @@
     "preview": "astro preview",
     "astro": "astro",
     "dev:style": "npx sass styles/index.scss public/style.css --watch",
-    "style": "npx sass styles/index.scss public/style.css"
+    "style": "npx sass styles/index.scss public/style.css",
+    "dev:script": "npx esbuild scripts/index.ts --bundle --sourcemap --outfile=public/script.js --watch",
+    "script": "npx esbuild scripts/index.ts --bundle --minify --outfile=public/script.js",
+    "npm:dev:genesis": "npm uninstall nebula-genesis && npm i ../../nebula-genesis",
+    "npm:prod:genesis": "npm uninstall nebula-genesis && npm i nebula-genesis",
+    "npm:dev:atoms": "npm uninstall nebula-atoms && npm i ../../nebula-atoms",
+    "npm:prod:atoms": "npm uninstall nebula-atoms && npm i nebula-atoms"
   },
   "dependencies": {
     "astro": "^5.3.0",
-    "nebula-atoms": "^2.1.1",
-    "nebula-genesis": "^2.0.4",
+    "nebula-atoms": "^2.2.8",
+    "nebula-genesis": "^2.0.7",
     "sass": "^1.83.4"
   }
 }
